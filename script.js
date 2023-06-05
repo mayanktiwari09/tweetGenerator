@@ -8,7 +8,7 @@ function displayRandomRow() {
     .then(data => {
       const rows = data.split('\n');
       const randomIndex = Math.floor(Math.random() * rows.length);
-      const randomRow = rows[randomIndex];
+      const randomRow = rows[randomIndex].replace(/^"(.*)"$/, '$1');
 
       document.getElementById('output').innerText = randomRow;
     })
